@@ -11,6 +11,7 @@ Educativo y de Aprendizaje Personal
 # Tecnologías
 - HTML5.
 - CSS3. 
+- JavaScript
 --- 
 # HTML 
 1. HTML  
@@ -149,46 +150,46 @@ Educativo y de Aprendizaje Personal
 # JS
 2. JS
     ```bash
-    document.addEventListener("DOMContentLoaded", function () {
-    const taskInput = document.getElementById("taskInput");
-    const taskList = document.getElementById("taskList");
+        document.addEventListener("DOMContentLoaded", function () {
+        const taskInput = document.getElementById("taskInput");
+        const taskList = document.getElementById("taskList");
 
-    // Función para agregar una tarea
-    window.agregarTarea = function () {
-        const tareaTexto = taskInput.value.trim();
-        if (tareaTexto === "") {
-            alert("Escribe una tarea antes de agregar.");
-            return;
-        }
+        // Función para agregar una tarea
+        window.agregarTarea = function () {
+            const tareaTexto = taskInput.value.trim();
+            if (tareaTexto === "") {
+                alert("Escribe una tarea antes de agregar.");
+                return;
+            }
 
-        // Crear elementos
-        const li = document.createElement("li");
-        const span = document.createElement("span");
-        span.textContent = tareaTexto;
+            // Crear elementos
+            const li = document.createElement("li");
+            const span = document.createElement("span");
+            span.textContent = tareaTexto;
 
-        const btnComplete = document.createElement("button");
-        btnComplete.textContent = "✅";
-        btnComplete.classList.add("task-btn", "complete");
-        btnComplete.addEventListener("click", function () {
-            li.classList.toggle("completed");
-        });
+            const btnComplete = document.createElement("button");
+            btnComplete.textContent = "✅";
+            btnComplete.classList.add("task-btn", "complete");
+            btnComplete.addEventListener("click", function () {
+                li.classList.toggle("completed");
+            });
 
-        const btnDelete = document.createElement("button");
-        btnDelete.textContent = "❌";
-        btnDelete.classList.add("task-btn", "delete");
-        btnDelete.addEventListener("click", function () {
-            taskList.removeChild(li);
-        });
+            const btnDelete = document.createElement("button");
+            btnDelete.textContent = "❌";
+            btnDelete.classList.add("task-btn", "delete");
+            btnDelete.addEventListener("click", function () {
+                taskList.removeChild(li);
+            });
 
-        // Agregar elementos al li
-        li.appendChild(span);
-        li.appendChild(btnComplete);
-        li.appendChild(btnDelete);
+            // Agregar elementos al li
+            li.appendChild(span);
+            li.appendChild(btnComplete);
+            li.appendChild(btnDelete);
 
-        // Agregar la tarea a la lista
-        taskList.appendChild(li);
+            // Agregar la tarea a la lista
+            taskList.appendChild(li);
 
-        // Limpiar el input
-        taskInput.value = "";
-    };
-});
+            // Limpiar el input
+            taskInput.value = "";
+        };
+    });
